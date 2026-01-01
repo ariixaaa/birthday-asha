@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>For You, My Love ❤️</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                min-height: 100vh;
+                background: linear-gradient(135deg, #c9b6ff, #ffb6d5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                padding: 20px;
+                overflow: hidden;
+            }
+
+            /* CONFETTI */
+            .confetti {
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+                overflow: hidden;
+                z-index: 0;
+            }
+
+            .confetti-piece {
+                position: absolute;
+                width: 8px;
+                height: 16px;
+                opacity: 0.7;
+                animation: fall linear infinite;
+            }
+
+            @keyframes fall {
+                0% {
+                    transform: translateY(-100vh) rotate(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+
+            /* BALLOONS */
+            .balloon {
+                position: absolute;
+                border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+                animation: float 4s ease-in-out infinite;
+                opacity: 0.75;
+                z-index: 1;
+            }
+
+            .balloon.one {
+                width: 70px;
+                height: 90px;
+                background: linear-gradient(135deg, #a8d5ff, #7bb5ff);
+                top: 15%;
+                left: 10%;
+            }
+
+            .balloon.two {
+                width: 60px;
+                height: 80px;
+                background: linear-gradient(135deg, #d4a5ff, #b07fff);
+                top: 25%;
+                right: 12%;
+                animation-delay: 1s;
+            }
+
+            .balloon.three {
+                width: 50px;
+                height: 70px;
+                background: linear-gradient(135deg, #ffd1e8, #ff9ec7);
+                bottom: 20%;
+                right: 20%;
+                animation-delay: 2s;
+            }
+
+            @keyframes float {
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-18px);
+                }
+            }
+
+            /* LETTER CARD */
+            .letter-wrapper {
+                max-width: 800px;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.92);
+                border-radius: 26px;
+                padding: 50px 40px;
+                box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25);
+                animation: fadeIn 1.8s ease;
+                position: relative;
+                z-index: 2;
+                text-align: center;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(40px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .letter-title {
+                font-size: 26px;
+                font-weight: 700;
+                margin-bottom: 30px;
+                letter-spacing: 1px;
+                color: #5a4fcf;
+            }
+
+            /* LETTER TEXT */
+            .letter-content {
+                max-width: 600px;
+                margin: 0 auto;
+                text-align: justify;
+                font-size: 16px;
+                line-height: 1.9;
+                color: #333;
+                hyphens: auto;
+            }
+
+            .letter-content p {
+                margin-bottom: 18px;
+            }
+
+            .signature {
+                margin-top: 40px;
+                font-weight: 600;
+                color: #5a4fcf;
+            }
+
+            /* FLOATING HEARTS */
+            .heart {
+                position: absolute;
+                font-size: 22px;
+                animation: heartFloat 5s ease-in-out infinite;
+                opacity: 0;
+                z-index: 1;
+            }
+
+            @keyframes heartFloat {
+                0% {
+                    transform: translateY(0) scale(0.5);
+                    opacity: 0;
+                }
+                30% {
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: translateY(-120px) scale(1);
+                    opacity: 0;
+                }
+            }
+
+            .song-button {
+                display: inline-block;
+                margin-top: 35px;
+                padding: 14px 28px;
+                background: linear-gradient(135deg, #7b6cff, #ff8fc7);
+                color: white;
+                font-weight: 600;
+                text-decoration: none;
+                border-radius: 30px;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+                transition: all 0.3s ease;
+            }
+
+            .song-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="confetti" id="confetti"></div>
+
+        <!-- BALLOONS -->
+        <div class="balloon one"></div>
+        <div class="balloon two"></div>
+        <div class="balloon three"></div>
+
+        <!-- LETTER -->
+        <div class="letter-wrapper">
+            <div class="letter-title">Dear My Love ❤️</div>
+
+            <div class="letter-content">
+                <p>
+                    Dear My Love, Happy birthday, my home. You often tell me
+                    that im the one who makes you feel seen and safe. You thank
+                    me for noticing the small things and for being your comfort.
+                </p>
+
+                <p>
+                    But today, on your special day, I want you to know that you
+                    are the one who brings peace to my world. I may not always
+                    say it out loud, having you by my side is the greatest thing
+                    that could happened to me.
+                </p>
+
+                <p>
+                    Thank you for being born, for your patience, and for
+                    choosing me to be your boyfriend. In this new chapter of
+                    your life, i promise to be present, to treat you better, and
+                    to understand you better.
+                </p>
+
+                <p>
+                    I promise to keep striving to be the reason behind that
+                    beautiful smile of yours. I love you, more than words could
+                    ever explain.
+                </p>
+            </div>
+
+            <div class="signature">— Your Handsome BF 🤍😎</div>
+            <a href="song.html" class="song-button"> 🎵 A Song For You </a>
+        </div>
+
+        <script>
+            // Confetti
+            const confettiContainer = document.getElementById("confetti");
+            const colors = [
+                "#ff69b4",
+                "#ffc0cb",
+                "#dda0dd",
+                "#ba55d3",
+                "#9370db",
+            ];
+
+            for (let i = 0; i < 40; i++) {
+                const confetti = document.createElement("div");
+                confetti.className = "confetti-piece";
+                confetti.style.left = Math.random() * 100 + "%";
+                confetti.style.background =
+                    colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = Math.random() * 3 + 4 + "s";
+                confetti.style.animationDelay = Math.random() * 5 + "s";
+                confettiContainer.appendChild(confetti);
+            }
+
+            // Floating hearts
+            setInterval(() => {
+                const heart = document.createElement("div");
+                heart.className = "heart";
+                heart.textContent = "❤️";
+                heart.style.left = Math.random() * 100 + "%";
+                heart.style.bottom = "0px";
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }, 2000);
+        </script>
+    </body>
+</html>
